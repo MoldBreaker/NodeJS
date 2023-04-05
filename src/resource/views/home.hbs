@@ -1,1 +1,41 @@
-<h1>HOME PAGE</h1>
+<div class="mt-4">
+    <div class="row">
+        
+        {{#each courses}}
+        <div class="col-sm-6 col-lg-4">
+            <div class="card card-course-item">
+                <a href="./courses/{{this.slug}}">
+                    <img src="{{this.image}}" class="card-img-top" alt="...">
+                </a>
+            <div class="card-body">
+                <a href="./courses/{{this.slug}}">
+                    <h5 class="card-title">{{this.name}}</h5>
+                </a>
+                <p class="description" class="card-text">{{this.decription}}</p>
+                <button class="read-more btn btn-primary">Read More</button>
+                <a href="#" class="btn btn-primary">Buy Course</a>
+            </div>
+            </div>
+        </div>
+        {{/each}}
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+
+            $(document).ready(function(){
+                $(".read-more").click(function(){
+                    $(this).prev().toggle();
+                    $(this).siblings('.dots').toggle();
+                    if($(this).text()=='Read More'){
+                        $(this).text('Read Less');
+                    }
+                    else{
+                        $(this).text('Read More');
+                    }
+                });
+            });
+    })
+</script>
