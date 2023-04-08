@@ -74,6 +74,20 @@ class CourseController{
     default(req,res, next) {
         res.redirect('/me/stored/courses')
     }
+
+    //[POST] /courses/handle-form-handle
+    handleFormActions(req, res, next) {
+        switch(req.body.action) {
+            case 'delete':
+                Course.deleteById({ $in: req.body.courseIds })
+                    .then(() => res.redirect(`back`))
+                    .catch(next)
+
+                break;
+            default: 
+                res.json({message: 'Action invalid'})
+        }
+    }
 }
 
 module.exports = new CourseController();
