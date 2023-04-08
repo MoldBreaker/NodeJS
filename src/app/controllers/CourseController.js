@@ -70,6 +70,10 @@ class CourseController{
             .catch(next)
     }
 
+    //[GET] /
+    default(req,res, next) {
+        res.redirect('/me/stored/courses')
+    }
 }
 
 module.exports = new CourseController();

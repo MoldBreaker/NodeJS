@@ -1,13 +1,23 @@
 <div class="mt-4">
     <div class="row">
-        <div class="col-lg-3">
-            <button>Learn Now</button>
-        </div>
+
+        <div style="width: 100%" id="url-string"></div> 
 
         <div class="col-lg-3">
             <h2>{{this.name}}</h2>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/{{this.videoId}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <p>{{this.decription}}</p>
+            <p><b>Description: </b>{{this.decription}}</p>
         </div>
     </div>
 </div>
+
+<script>
+    var url = window.location.href.split('/');
+    var urlString = '<a href="/">Trang chủ</a>';
+    var prefix = '';
+    for(let i=3;i<url.length;i++){
+        urlString+=`/<a href="/${prefix + url[i]}">${url[i]}</a>`;
+        prefix+=url[i] + '/';
+    }
+    document.getElementById('url-string').innerHTML=urlString;
+</script>

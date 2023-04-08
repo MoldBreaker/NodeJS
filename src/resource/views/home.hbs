@@ -1,7 +1,8 @@
 <script>
         var listDecription = [];
 </script>
-<div class="mt-4">
+<div id="pagination">
+    <div class="mt-4">
     <div class="row">
         
         {{#each courses}}
@@ -28,13 +29,12 @@
 
     </div>
 </div>
+</div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function(){
 
         const getDecription = document.querySelectorAll(".description");
-
-        console.log(getDecription)
 
             for(let i=0;i<listDecription.length;i++){
                 var decription = listDecription[i].split(' ');
@@ -43,7 +43,6 @@
                 decription.splice(decription.length, 0, `</span>
                 <a class="read-more" style="font-style: italic;text-decoration: underline;">Read More</a>`);
                 getDecription[i].innerHTML = decription.join(" ");
-                console.log(decription.join(" "))
             }
 
             $(".read-more").prev().toggle();
