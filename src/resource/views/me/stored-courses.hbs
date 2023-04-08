@@ -1,7 +1,8 @@
 <div class="mt-4">
     <div>
-        <h3>Khóa học của tôi</h3>
-        <a href="/me/trash/courses">Thùng rác</a>
+        <h3>Khóa học của tôi</h3> 
+        <a href="/courses/create" type="a" class="btn btn-primary" style="float: right; color: white">Tạo mới</button>
+        <a href="/me/trash/courses">Thùng rác ({{this.deleteCount}})</a>
     </div>
 
     <table class="table mt-4">
@@ -39,6 +40,7 @@
             {{/each}}
         </tbody>
     </table>
+    <a href="/" type="button" class="btn btn-primary">Quay lại</a>
 </div>
 
 {{! Delete hidden form}}

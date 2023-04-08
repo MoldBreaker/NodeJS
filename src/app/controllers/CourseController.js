@@ -26,7 +26,7 @@ class CourseController{
         const course = new Course(formData);
         course.save()
             .then(() => {
-                res.redirect('/')
+                res.redirect('/me/stored/courses')
             })
             .catch(next => {
                 res.send('ERROR')
