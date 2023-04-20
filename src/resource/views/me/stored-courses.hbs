@@ -10,7 +10,7 @@
                     Chọn tất cả
                 </label>
             </div>
-            
+    
             <select class="form-select" aria-label="Default select example" style="margin: 0 16px" name="action" required>
                 <option value="">-- Hành động --</option>
                 <option value="delete">Xóa</option>
@@ -27,9 +27,18 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">STT</th>
-                <th scope="col">Tên Khóa Học</th>
-                <th scope="col">Trình độ</th>
-                <th scope="col">Thời gian tạo</th>
+                <th scope="col">
+                    {{{sortable 'name' _sort}}}
+                    Tên Khóa Học
+                </th>
+                <th scope="col">
+                    Trình độ
+                    {{{sortable 'level' _sort}}}
+                </th>
+                <th scope="col">
+                    Thời gian tạo
+                    {{{sortable 'createdAt' _sort}}}
+                </th>
                 <th scope="col"></th>
             </tr>
         </thead>
